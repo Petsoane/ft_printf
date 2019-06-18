@@ -6,16 +6,15 @@
 #    By: lpetsoan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/05 14:32:46 by lpetsoan          #+#    #+#              #
-#    Updated: 2019/06/05 15:19:55 by lpetsoan         ###   ########.fr        #
+#    Updated: 2019/06/18 08:28:25 by lpetsoan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLAG = -Wall -Wextra -Wall
 
-NAME = libftfprintf.a
+NAME = libftprintf.a
 
 SRC = ft_printf.c\
-	  ft_countspec.c\
 
 OBJ = $(SRC:.c=.o)
 

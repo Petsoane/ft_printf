@@ -5,27 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpetsoan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 13:59:54 by lpetsoan          #+#    #+#             */
-/*   Updated: 2019/06/05 15:58:57 by lpetsoan         ###   ########.fr       */
+/*   Created: 2019/06/18 06:56:54 by lpetsoan          #+#    #+#             */
+/*   Updated: 2019/06/18 09:58:38 by lpetsoan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//static void	get_spectype(const char *f);
-
-void		ft_printf(const char *f, ...)
+int		ft_printf(char const *f, ...)
 {
-	int			arg_count;
-	//va_list		args;
-	
-	arg_count = count_arg(f);
+	va_list list;
 
-	if (arg_count < 0)
+	va_start(list, f);
+	while (*f)
 	{
-		ft_putstr_fd("Error with the speciifers\n", 2);
-		exit(EXIT_FAILURE);
+		if (*f == '%')
+		{
+			f++;
+			if (*f == 'i' || *f == 'd' || *f == 'D')
+				ft_putnbr(va_arg(list , int));
+			else if (*f == 'f' || *f == 'F')
+				ft_putfloat(va_arg(list, double));
+			else if (*f == 's' || *f == 'S')
+				ft_putstr(va_arg(list, char *));
+			else if (*f == 'c' || *f == 'C')
+				ft_putchar(va_arg(list, int));
+			else if (*f == 'o' || *f == 'O')
+				ft_putoctal(va_arg(list, int));
+		}
+		else
+			ft_putchar(*f);
+		f++;
 	}
-	printf("%d\n", arg_count);
-	ft_putstr(f);
+	return (0);
 }

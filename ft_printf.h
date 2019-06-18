@@ -5,24 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpetsoan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 10:33:39 by lpetsoan          #+#    #+#             */
-/*   Updated: 2019/06/05 15:58:48 by lpetsoan         ###   ########.fr       */
+/*   Created: 2019/06/18 06:58:16 by lpetsoan          #+#    #+#             */
+/*   Updated: 2019/06/18 08:35:22 by lpetsoan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 #	define FT_PRINTF_H
-#include <stdlib.h>
-#include "libft.h"
-#include <stdarg.h>
-#include <stdio.h>
+#	include <stdarg.h>
+#	include <stdio.h>
+#	include <stdlib.h>
+#	include "libft/libft.h"
 
-typedef struct			s_speciefier
+typedef struct		s_spec
 {
-	void				*data;
-	size_t				type;
-}						t_spec;
-void		ft_printf(const char *s, ...);
-int			count_arg(const char *s);
-
+	char			type;
+}					t_specifier;
+int		ft_printf(const char *f, ...);
 #endif
