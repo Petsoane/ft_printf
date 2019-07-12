@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   spaces.c                                           :+:      :+:    :+:   */
+/*   valid_flag.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpetsoan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 15:16:25 by lpetsoan          #+#    #+#             */
-/*   Updated: 2019/07/10 13:01:07 by lpetsoan         ###   ########.fr       */
+/*   Created: 2019/07/12 12:41:26 by lpetsoan          #+#    #+#             */
+/*   Updated: 2019/07/12 12:44:24 by lpetsoan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	spaces(int n, char padding)
+int		valid_flag(char *f)
 {
-	while (n-- > 0)
-		ft_putchar(padding);
+	const char *v_flag = "# -+0";
+
+	while (*v_flag == *f)
+	{
+		if (*v_flag == *f)
+			return (1);
+		v_flag++;
+	}
+	return (0);
 }

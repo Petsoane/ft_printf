@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   spaces.c                                           :+:      :+:    :+:   */
+/*   valid_width.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpetsoan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 15:16:25 by lpetsoan          #+#    #+#             */
-/*   Updated: 2019/07/10 13:01:07 by lpetsoan         ###   ########.fr       */
+/*   Created: 2019/07/12 12:38:50 by lpetsoan          #+#    #+#             */
+/*   Updated: 2019/07/12 12:40:02 by lpetsoan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	spaces(int n, char padding)
+int		valid_width(char *f)
 {
-	while (n-- > 0)
-		ft_putchar(padding);
+	if (*f == '.' && ft_isdigit(*(f + 1)))
+		return (1);
+	return (0);
 }

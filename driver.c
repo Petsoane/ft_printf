@@ -6,7 +6,7 @@
 /*   By: lpetsoan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 07:52:10 by lpetsoan          #+#    #+#             */
-/*   Updated: 2019/07/09 16:02:06 by lpetsoan         ###   ########.fr       */
+/*   Updated: 2019/07/12 12:29:26 by lpetsoan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(void)
 {
-	ft_printf(" %-100.10s  %.10f specifer, and the number is: %15x|\n","Hello the first ",10.999, 100);
+	/* Dont forget to fix the workings of the float conversion. */
+	ft_printf(" %0100.10s  %.10f specifer, and the number is: %100x|\n","Hello the first ",10.999, 100);
 	return (0);
 }
